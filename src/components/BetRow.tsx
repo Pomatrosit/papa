@@ -28,6 +28,8 @@ import {
 import { AddEditBet } from "./AddEditBet";
 import { FormProvider } from "./form/FormProvider";
 
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -116,9 +118,31 @@ export const BetRow = ({ date, currentDay, setDays, bet, idx }: Props) => {
           </Typography>
         </TableCell>
         <TableCell align="right">
-          <Typography fontSize={14} fontWeight={500}>
-            {formatCurrency(betIncome)}
-          </Typography>
+          <Stack direction="row" alignItems="center" justifyContent="flex-end">
+            <Typography fontSize={14} fontWeight={500}>
+              {formatCurrency(betIncome)}
+            </Typography>
+            {betIncome > 0 ? (
+              <ArrowDropDownIcon
+                sx={{
+                  transform: "rotate(180deg)",
+                  path: {
+                    color: "#68cf25",
+                  },
+                }}
+              />
+            ) : betIncome < 0 ? (
+              <span>
+                <ArrowDropDownIcon
+                  sx={{
+                    path: {
+                      color: "#fa2d56",
+                    },
+                  }}
+                />
+              </span>
+            ) : null}
+          </Stack>
         </TableCell>
         <TableCell
           align="right"
@@ -159,7 +183,7 @@ export const BetRow = ({ date, currentDay, setDays, bet, idx }: Props) => {
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Box mb={4}>
-            <Typography align="center">Удалить ставку {bet.name}?</Typography>
+            <Typography align="center">Удалить ставочку {bet.name}?</Typography>
           </Box>
 
           <Stack

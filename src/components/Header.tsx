@@ -93,7 +93,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
         mb={2}
       >
         <Stack direction="row" alignItems="center" spacing={2}>
-          <Typography fontSize={14} color="#676767">
+          <Typography fontSize={16} color="#676767">
             Начальный банк
           </Typography>
           <TextField
@@ -118,7 +118,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
           />
         </Stack>
         <Typography>
-          <Typography component="span" color="#676767" fontSize={14}>
+          <Typography component="span" color="#676767" fontSize={16}>
             Итого:{" "}
           </Typography>
           <Typography component="span" fontWeight={500}>
@@ -134,7 +134,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
         spacing={2}
       >
         <Stack direction="row" alignItems="center" gap={0.5}>
-          <Typography fontSize={14} color="#676767">
+          <Typography fontSize={16} color="#676767">
             Прибыль:
           </Typography>
           <Typography fontWeight={500}>
@@ -159,7 +159,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
           ) : null}
         </Stack>
         <Typography fontSize={14}>
-          <Typography component="span" color="#676767" fontSize={14}>
+          <Typography component="span" color="#676767" fontSize={16}>
             Средний кэф:{" "}
           </Typography>
           <Typography component="span" fontWeight={500}>

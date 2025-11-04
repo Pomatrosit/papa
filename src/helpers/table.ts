@@ -17,7 +17,7 @@ export const getBetPayment = (bet: BetType) => {
   }
 };
 
-export const getBetIncome = (bet: BetType) => {
+export const getBetIncome = (bet: BetType): number => {
   switch (bet.result) {
     case "unknown": {
       return 0;
