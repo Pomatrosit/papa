@@ -45,13 +45,17 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
 
   const balance = currentDay?.startBalance ? +currentDay.startBalance : 0;
 
-  const totalIncome = bets.reduce((acc, item) => {
-    acc += getBetIncome(item);
+  const totalIncome = Math.floor(
+    bets.reduce((acc, item) => {
+      acc += getBetIncome(item);
 
-    return acc;
-  }, 0);
+      return acc;
+    }, 0)
+  );
 
-  const currentCash = balance + totalIncome - getCashInProgress(bets);
+  const currentCash = Math.floor(
+    balance + totalIncome - getCashInProgress(bets)
+  );
 
   const averageCoef =
     bets.reduce((acc, bet) => {
