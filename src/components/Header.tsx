@@ -45,7 +45,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
 
   const balance = currentDay?.startBalance ? +currentDay.startBalance : 0;
 
-  const totalIncome = Math.floor(
+  const totalIncome = Math.round(
     bets.reduce((acc, item) => {
       acc += getBetIncome(item);
 
@@ -53,7 +53,7 @@ export const Header = ({ date, setDate, currentDay, setDays }: Props) => {
     }, 0)
   );
 
-  const currentCash = Math.floor(
+  const currentCash = Math.round(
     balance + totalIncome - getCashInProgress(bets)
   );
 
